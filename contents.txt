@@ -1,0 +1,47 @@
+note on the images given
+1) burry images and images which are enclosed in a black circle
+2) some art of animal images
+3) multiple animals in an image
+4) some animals partially included in the image
+
+
+Aim or work to be done in the project
+1) binary classification of the 64 grids based on containing or not containing the animal.
+
+Works to be done
+pre-processing
+1) convert them in to 4:3 aspect ratio
+2) scale to 800*600 pixel, downscale but do not upscale
+model development
+1) Develop suitable features to encode the images
+2) find a method to identify the grids in which the animal is present to be fed into the training phase
+3)Create a suitable model to classify
+4) check using other online images
+5) do not use cnn, optimize for speed
+6)The model should output a csv file containing the name of the imagefile and columns c01 to c64 which are 0 or 1 depending on whether it contains animal or not.
+6) convert the final model into a pickle file
+
+
+Image embedding features
+1) colour histogram-colour features (produces features using the number in a particular bin)
+2) Local Binary pattern- used for features(produces features using histogram bins)
+3) gabor filters - texture detection (number of features is the summary statistic for different hyper parameters)
+4) HOG count of gradients pointing in the same direction
+5) SIFT / SURF / ORB / BRIEF
+6) Discrete Cosine Transform (DCT) coefficients
+7) Wavelet transforms (e.g., Haar, Daubechies)
+8) Saliency map statistics
+9) Objectness / EdgeBoxes / region proposals
+
+
+
+Why per-block (cell) features are better
+Locality matters:
+Animals may only occupy a part of the image (some grid cells).
+Applying features to the whole image blurs local cues — edges, texture, color histograms will mix background + animal, making classification harder.
+Grid-level labeling requirement:
+Your project requires a label for each cell (0/1).
+Extracting features per cell aligns naturally with the final grid-level classification.
+Noise reduction:
+Small sub-blocks allow local clustering of features.
+Majority-vote or clustering within the block can reduce misclassification from outlier pixels.
