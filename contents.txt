@@ -1,5 +1,5 @@
 note on the images given
-1) burry images and images which are enclosed in a black circle
+1) blurry images and images which are enclosed in a black circle
 2) some art of animal images
 3) multiple animals in an image
 4) some animals partially included in the image
@@ -45,3 +45,4 @@ Extracting features per cell aligns naturally with the final grid-level classifi
 Noise reduction:
 Small sub-blocks allow local clustering of features.
 Majority-vote or clustering within the block can reduce misclassification from outlier pixels.
+
